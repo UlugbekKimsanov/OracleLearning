@@ -9,3 +9,7 @@ create table customer(
 );
 
 select * from customer;
+
+insert into customer (cust_id,cust_name, mobile, city,email_id)
+values (1, 'aasdasd', 12901290, 'asdasgmailcom','sdfsdfsdf');
+
