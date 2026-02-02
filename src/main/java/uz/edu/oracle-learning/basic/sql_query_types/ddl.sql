@@ -26,11 +26,38 @@ create table customer(
                          dob date,
                          email_id varchar2(100)
 );
-
+-- add column existing table
 alter table  customer add
     city varchar2(100);
 
+--delete existing column
+alter table customer drop column cust_name;
+
+--delete table
 drop table customer;
 
+
 create index customer_name_index on customer(cust_name);
+
+
+--columnnni modify qilganimizda scaleni oshirishimiz mumkin kamaytirish esa faqat table bosh bolganda mumkin
+-- typeni modify qilmochi bolsak ham column bosh/null bolishi kerak
+alter table customer modify cust_id number(10);
+
+alter table customer modify cust_id varchar2(100);
+alter table customer modify cust_id varchar(120);
+
+-- agar data toldirilgan tableni columini scaleni decriment qilmoqchi bolsak yoki typeni modfy
+-- qilmoqchi bolsak oldin backup yaratib song tableni truncate qilib keyin modify qilishimiz mumkin
+create table customer_ckp as select * from customer;
+
+create table customer_ckp1 as select * from customer where 1=2;
+
+truncate table customer;
+
+alter table customer modify cust_name varchar2(50);
+alter table customer modify cust_id varchar(5);
+alter table customer modify cust_name number(20);
+
+
 
