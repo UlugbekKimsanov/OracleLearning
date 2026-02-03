@@ -59,5 +59,7 @@ alter table customer modify cust_name varchar2(50);
 alter table customer modify cust_id varchar(5);
 alter table customer modify cust_name number(20);
 
+alter table customer_ckp1 modify cust_id varchar(5);
+alter table customer_ckp1 modify cust_id varchar(19);
 
 
